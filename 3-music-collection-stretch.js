@@ -19,10 +19,10 @@ function addToCollection( title, artist, yearPublished, tracks){ //begin functio
 
 console.log('Added:', addToCollection('Smash', 'Offspring', 1994, ['Time To Relax', 'Nitro', 'Bad Habit', 'Gotta Get Away', 'Genocide'])); //adding album #1
 console.log('Added:', addToCollection('Dizzy Up The Girl', 'Goo Goo Dolls', 1998, ['Dizzy', 'Slide', 'Broadway', 'January Friend', 'Black Balloon'])); //adding album #2
-console.log('Added:', addToCollection('5150', 'Van Halen', 1986)); // etc for four more......
-console.log('Added:', addToCollection('Diver Down', 'Van Halen', 1982));
-console.log('Added:', addToCollection("This One's For You", 'Barry Manilow', 1976));
-console.log('Added:', addToCollection('Carnival Of Carnage', 'Insane Clown Posse', 1992));
+console.log('Added:', addToCollection('5150', 'Van Halen', 1986, ['Good Enough', "Why Can't This Be Love", 'Get Up', 'Dreams', 'Summer Nights'])); // etc for four more......
+console.log('Added:', addToCollection('Diver Down', 'Van Halen', 1982, ['Where Have All The Good Times Gone?', "Hang 'Em High", 'Cathedral', 'Secrets', 'Intruder']));
+console.log('Added:', addToCollection("This One's For You", 'Barry Manilow', 1976, ["This One's For You", 'Daybreak', 'You Oughta Be Home With Me', 'Jump Shout Boogie', 'Weekend In New England']));
+console.log('Added:', addToCollection('Carnival Of Carnage', 'Insane Clown Posse', 1992, ['(Intro)', 'Carnival Of Carnage', 'The Juggla', 'First Day Out', 'Red Neck Hoe']));
 
 console.log(' '); //create space for testing - hope I remember to delete this later!
 
@@ -73,7 +73,7 @@ function search( info ){ //create search function with info parameter
   let content = []; //create empty array called content
   for(i=0; i<collection.length; i++){ //looping to check collection list for artist
     if(info.artist === collection[i].a && info.year === collection[i].y){ // if the artist property of the argument object is equal to the a dot operator in [i] array of the collection AAAANNNNDDDD the year object property is equal to the y dot operator in the collection...
-      content.push(info.artist, info.year); //...then push these into the content array
+      content.push(info.artist, collection[i].t, info.year); //...then push these into the content array
     } //end conditional
     if(info.artist == null){ //if the argument is blank
       return collection; //return the original collection
